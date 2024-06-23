@@ -9,32 +9,23 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import ru.mobile_broadcast.androidmeetupdiexample.databinding.ActivityMainBinding
-import ru.mobile_broadcast.androidmeetupdiexample.di.ApplicationComponent
 import ru.mobile_broadcast.androidmeetupdiexample.domain.model.SpaceXRocket
-import ru.mobile_broadcast.androidmeetupdiexample.presentation.AppSpaceX
 import ru.mobile_broadcast.androidmeetupdiexample.presentation.MainScreenUiState
 import ru.mobile_broadcast.androidmeetupdiexample.presentation.main_screen.vm.MainViewModel
-import ru.mobile_broadcast.androidmeetupdiexample.presentation.main_screen.vm.ViewModelFactory
 import ru.mobile_broadcast.androidmeetupdiexample.util.formatToRusDate
-import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
-    private val viewModel: MainViewModel by viewModels { viewModelFactory }
-
-    private val component: ApplicationComponent by lazy {
-        (application as AppSpaceX).component
-    }
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        component.inject(this)
         binding = ActivityMainBinding.inflate(layoutInflater).also {
             setContentView(it.root)
         }

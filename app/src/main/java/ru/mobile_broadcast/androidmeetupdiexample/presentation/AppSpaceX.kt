@@ -1,11 +1,7 @@
 package ru.mobile_broadcast.androidmeetupdiexample.presentation
 
 import android.app.Application
-import ru.mobile_broadcast.androidmeetupdiexample.di.DaggerApplicationComponent
+import dagger.hilt.android.HiltAndroidApp
 
-class AppSpaceX : Application() {
-
-    val component by lazy {
-        DaggerApplicationComponent.factory().create(this)
-    }
-}
+@HiltAndroidApp
+class AppSpaceX : Application()
