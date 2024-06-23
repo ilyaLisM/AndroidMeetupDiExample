@@ -2,10 +2,9 @@ package ru.mobile_broadcast.androidmeetupdiexample.presentation.main_screen.vm
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bumptech.glide.load.engine.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -17,6 +16,7 @@ import ru.mobile_broadcast.androidmeetupdiexample.util.ResourceManager
 import ru.mobile_broadcast.androidmeetupdiexample.util.toShortPriceName
 import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel @Inject constructor(
     private val getRocketsUseCase: GetRocketsUseCase,
     private val resourceManager: ResourceManager,

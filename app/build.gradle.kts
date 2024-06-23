@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -59,12 +60,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.2")
 
     // Dagger 2
-    implementation("com.google.dagger:dagger:2.50")
-    kapt("com.google.dagger:dagger-compiler:2.50")
+    // implementation("com.google.dagger:dagger:2.50")
+    // kapt("com.google.dagger:dagger-compiler:2.50")
 
     // Hilt
-    // implementation("com.google.dagger:hilt-android:2.50")
-    // kapt("com.google.dagger:hilt-android-compiler:2.50")
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-compiler:2.50")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

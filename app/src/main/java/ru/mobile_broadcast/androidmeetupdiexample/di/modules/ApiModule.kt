@@ -2,15 +2,18 @@ package ru.mobile_broadcast.androidmeetupdiexample.di.modules
 
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.mobile_broadcast.androidmeetupdiexample.data.remote.SpaceXApi
-import ru.mobile_broadcast.androidmeetupdiexample.di.annotations.ApplicationScope
 import ru.mobile_broadcast.androidmeetupdiexample.di.annotations.BaseUrlQualifier
+import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class ApiModule {
 
     @BaseUrlQualifier
@@ -19,8 +22,8 @@ class ApiModule {
         return "https://api.spacexdata.com/v3/"
     }
 
-    @ApplicationScope
     @Provides
+    @Singleton
     fun provideSpaceXApi(
         @BaseUrlQualifier baseUrl: String
     ): SpaceXApi {
