@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SpaceXRockets</string>
+    <string name="first_launch">Первый запуск</string>
+    <string name="country">Страна</string>
+    <string name="launch_price">Стоимость запуска</string>
+    <string name="internet_connection_error">Нет интернет соединения</string>
+    <string name="something_went_wrong">Что-то пошло не так, повторите позже</string>
+
+    <string name="falcon_heavy">Falcon Heavy</string>
+    <string name="string_test_first_launch">7 февраля, 2018</string>
+    <string name="string_test_country">США</string>
+    <string name="string_test_price">$90 млн</string>
+
+    <string name="billion_suffix">млрд</string>
+    <string name="million_suffix">млн</string>
+    <string name="thousand_suffix">тыс</string>
+</resources>
